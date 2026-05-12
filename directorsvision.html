@@ -1,0 +1,610 @@
+<!-- FILE NAME: directorsvision.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Directors Vision | Dnyansagar Classes</title>
+
+  <style>
+
+    /* ================= RESET ================= */
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    :root{
+      --primary:#1a237e;
+      --accent:#ffd700;
+      --light:#f5f7fb;
+      --dark:#111827;
+    }
+
+    body{
+      font-family:'Segoe UI',sans-serif;
+      background:var(--light);
+      color:#333;
+      line-height:1.8;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+      padding:0 20px;
+    }
+
+    /* ================= HEADER ================= */
+
+    .main-header{
+      background:#fff;
+
+      position:sticky;
+      top:0;
+
+      z-index:999;
+
+      box-shadow:0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .header-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      min-height:80px;
+    }
+
+    /* LOGO */
+    .logo-section{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .logo-section img{
+      width:55px;
+      height:55px;
+    }
+
+    .logo-text h2{
+      font-size:24px;
+      color:var(--primary);
+      margin-bottom:2px;
+    }
+
+    .logo-text p{
+      font-size:13px;
+      color:#666;
+    }
+
+    /* MENU */
+    .nav-menu{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    .nav-menu li a{
+      text-decoration:none;
+      color:var(--primary);
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .nav-menu li a:hover{
+      color:#000;
+    }
+
+    /* BUTTON */
+    .header-btn{
+      background:var(--primary);
+      color:#fff;
+
+      padding:10px 20px;
+
+      border-radius:8px;
+
+      text-decoration:none;
+
+      font-weight:600;
+
+      transition:0.3s;
+    }
+
+    .header-btn:hover{
+      background:#000;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      background:linear-gradient(rgba(26,35,126,0.85),rgba(26,35,126,0.85)),
+      url('https://images.unsplash.com/photo-1523240795612-9a054b0db644');
+
+      background-size:cover;
+      background-position:center;
+
+      color:#fff;
+
+      padding:120px 20px;
+
+      text-align:center;
+    }
+
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      max-width:850px;
+      margin:auto;
+
+      font-size:20px;
+    }
+
+    /* ================= DIRECTOR SECTION ================= */
+
+    .director-section{
+      padding:80px 0;
+    }
+
+    .director-card{
+      background:#fff;
+
+      border-radius:30px;
+
+      overflow:hidden;
+
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+      display:flex;
+      align-items:center;
+
+      gap:40px;
+
+      margin-bottom:60px;
+
+      padding:40px;
+    }
+
+    .director-card.reverse{
+      flex-direction:row-reverse;
+    }
+
+    /* IMAGE */
+    .director-image{
+      flex:1;
+      text-align:center;
+    }
+
+    .director-image img{
+      width:100%;
+      max-width:350px;
+
+      aspect-ratio:669 / 903;
+
+      object-fit:cover;
+
+      border-radius:25px;
+
+      box-shadow:0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    /* CONTENT */
+    .director-content{
+      flex:1.2;
+    }
+
+    .director-content h2{
+      font-size:42px;
+      color:var(--primary);
+
+      margin-bottom:10px;
+    }
+
+    .qualification{
+      display:inline-block;
+
+      background:var(--primary);
+      color:#fff;
+
+      padding:8px 20px;
+
+      border-radius:30px;
+
+      font-size:14px;
+
+      margin-bottom:25px;
+    }
+
+    .director-content p{
+      font-size:17px;
+      color:#555;
+
+      margin-bottom:18px;
+    }
+
+    /* HIGHLIGHTS */
+    .highlights{
+      margin-top:20px;
+    }
+
+    .highlights li{
+      list-style:none;
+
+      margin-bottom:12px;
+
+      font-size:16px;
+
+      color:#444;
+    }
+
+    /* VISION BOX */
+    .vision-box{
+      margin-top:30px;
+
+      background:#f8fafc;
+
+      padding:25px;
+
+      border-left:5px solid var(--accent);
+
+      border-radius:15px;
+    }
+
+    .vision-box h3{
+      color:var(--primary);
+      margin-bottom:12px;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta{
+      background:var(--primary);
+
+      color:#fff;
+
+      text-align:center;
+
+      padding:80px 20px;
+    }
+
+    .cta h2{
+      font-size:42px;
+      margin-bottom:18px;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+
+      margin-bottom:30px;
+
+      font-size:18px;
+    }
+
+    .cta-btn{
+      background:var(--accent);
+      color:#000;
+
+      padding:14px 28px;
+
+      border-radius:10px;
+
+      text-decoration:none;
+
+      font-weight:700;
+
+      display:inline-block;
+
+      transition:0.3s;
+    }
+
+    .cta-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer{
+      background:var(--dark);
+
+      color:#fff;
+
+      text-align:center;
+
+      padding:25px;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media(max-width:900px){
+
+      .header-row{
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px 0;
+      }
+
+      .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .hero p{
+        font-size:17px;
+      }
+
+      .director-card,
+      .director-card.reverse{
+        flex-direction:column;
+
+        text-align:center;
+      }
+
+      .director-content h2{
+        font-size:32px;
+      }
+
+      .director-image img{
+        max-width:280px;
+      }
+
+      .cta h2{
+        font-size:32px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="main-header">
+
+    <div class="container">
+
+      <div class="header-row">
+
+        <!-- LOGO -->
+        <div class="logo-section">
+
+          <img src="logo.png" alt="Logo">
+
+          <div class="logo-text">
+            <h2>Dnyansagar Classes</h2>
+            <p>Khadki, Pune</p>
+          </div>
+
+        </div>
+
+        <!-- MENU -->
+        <ul class="nav-menu">
+
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#courses">Courses</a></li>
+          <li><a href="index.html#results">Results</a></li>
+          <li><a href="directorsvision.html">Our Directors</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+
+        </ul>
+
+        <!-- BUTTON -->
+        <a href="https://wa.me/919665850815"
+           class="header-btn"
+           target="_blank">
+
+           Inquiry Now
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="container">
+
+      <h1>Directors Vision</h1>
+
+      <p>
+        Building confident, knowledgeable, and future-ready students
+        through quality education, discipline, and concept-based learning.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ================= DIRECTOR 1 ================= -->
+
+  <section class="director-section">
+
+    <div class="container">
+
+      <div class="director-card">
+
+        <!-- IMAGE -->
+        <div class="director-image">
+          <img src="image1.png" alt="Dr. Abhishek Balasaheb Aher">
+        </div>
+
+        <!-- CONTENT -->
+        <div class="director-content">
+
+          <h2>Dr. Abhishek Balasaheb Aher</h2>
+
+          <span class="qualification">
+            M.Sc. Chemistry, B.Ed.
+          </span>
+
+          <p>
+            An experienced educator and academic leader,
+            Dr. Abhishek Aher has dedicated his career
+            to helping students achieve academic excellence
+            with confidence and concept clarity.
+          </p>
+
+          <p>
+            Honored with an Honorary Doctorate in Social Work
+            and Education, he has mentored more than 10,000 students.
+          </p>
+
+          <!-- HIGHLIGHTS -->
+          <ul class="highlights">
+
+            <li>✔ 10,000+ Students Mentored</li>
+            <li>✔ Expert Academic Leadership</li>
+            <li>✔ Strong Focus on Concept Clarity</li>
+            <li>✔ Competitive Exam Guidance</li>
+
+          </ul>
+
+          <!-- VISION -->
+          <div class="vision-box">
+
+            <h3>Vision</h3>
+
+            <p>
+              “To empower students with knowledge,
+              discipline, and confidence so they can
+              succeed academically and personally.”
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= DIRECTOR 2 ================= -->
+
+  <section class="director-section">
+
+    <div class="container">
+
+      <div class="director-card reverse">
+
+        <!-- IMAGE -->
+        <div class="director-image">
+          <img src="image.png" alt="Miss Sweekrutee Aher">
+        </div>
+
+        <!-- CONTENT -->
+        <div class="director-content">
+
+          <h2>Miss Sweekrutee Aher</h2>
+
+          <span class="qualification">
+            M.Sc. Chemistry, B.Ed.
+          </span>
+
+          <p>
+            An accomplished educator and SSC topper herself,
+            she brings strong academic insight and a
+            student-focused teaching approach.
+          </p>
+
+          <p>
+            She believes in helping students develop
+            confidence, consistency, and clear understanding
+            through smart learning techniques.
+          </p>
+
+          <!-- HIGHLIGHTS -->
+          <ul class="highlights">
+
+            <li>✔ SSC Topper & Mentor</li>
+            <li>✔ Student-Friendly Teaching</li>
+            <li>✔ Personalized Attention</li>
+            <li>✔ Consistent Academic Guidance</li>
+
+          </ul>
+
+          <!-- VISION -->
+          <div class="vision-box">
+
+            <h3>Vision</h3>
+
+            <p>
+              “To inspire students to learn with curiosity,
+              confidence, and dedication while achieving
+              their academic goals.”
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CTA ================= -->
+
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>Join Dnyansagar Classes Today</h2>
+
+      <p>
+        Start your journey towards academic excellence
+        with expert faculty, personalized guidance,
+        and result-oriented learning.
+      </p>
+
+      <a href="https://wa.me/918862010906"
+         class="cta-btn"
+         target="_blank">
+
+         Contact on WhatsApp
+
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    © 2026 Dnyansagar Classes | All Rights Reserved
+
+  </footer>
+
+</body>
+
+</html>
